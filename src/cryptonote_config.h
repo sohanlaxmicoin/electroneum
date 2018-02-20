@@ -119,7 +119,7 @@
 
 #define ALLOW_DEBUG_COMMANDS
 
-#define CRYPTONOTE_NAME                         "electroneum"
+#define CRYPTONOTE_NAME                         "laxmicoin"
 #define CRYPTONOTE_POOLDATA_FILENAME            "poolstate.bin"
 #define CRYPTONOTE_BLOCKCHAINDATA_FILENAME      "data.mdb"
 #define CRYPTONOTE_BLOCKCHAINDATA_LOCK_FILENAME "lock.mdb"
@@ -143,10 +143,10 @@ namespace config
   uint64_t const BASE_REWARD_CLAMP_THRESHOLD = ((uint64_t)100000000); // pow(10, 8)
   std::string const P2P_REMOTE_DEBUG_TRUSTED_PUB_KEY = "0000000000000000000000000000000000000000000000000000000000000000";
 
-  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 18018;
-  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 18019;
-  uint16_t const P2P_DEFAULT_PORT = 26967;
-  uint16_t const RPC_DEFAULT_PORT = 26968;
+  uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 2118;
+  uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 2119;
+  uint16_t const P2P_DEFAULT_PORT = 17221;
+  uint16_t const RPC_DEFAULT_PORT = 18221;
   boost::uuids::uuid const NETWORK_ID = { {
       0x04, 0xF8, 0x23, 0xE1, 0x66, 0xC2, 0xE3, 0xA4, 0xEA, 0x5D, 0xD1, 0x2C, 0x85, 0x8E, 0xC8, 0x39
     } };
@@ -155,10 +155,10 @@ namespace config
 
   namespace testnet
   {
-    uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 18018;
-    uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 18019;
-    uint16_t const P2P_DEFAULT_PORT = 36967;
-    uint16_t const RPC_DEFAULT_PORT = 36968;
+    uint64_t const CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX = 2118;
+    uint64_t const CRYPTONOTE_PUBLIC_INTEGRATED_ADDRESS_BASE58_PREFIX = 2119;
+    uint16_t const P2P_DEFAULT_PORT = 27221;
+    uint16_t const RPC_DEFAULT_PORT = 28221;
     boost::uuids::uuid const NETWORK_ID = { {
         0x04, 0xF8, 0x23, 0xE1, 0x66, 0xC2, 0xE3, 0xA4, 0xEA, 0x5D, 0xD1, 0x2C, 0x85, 0x8E, 0xC8, 0x40
       } };
