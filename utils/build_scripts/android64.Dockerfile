@@ -72,8 +72,8 @@ RUN curl -s -O https://www.openssl.org/source/openssl-${OPENSSL_VERSION}.tar.gz 
     && make build_crypto build_ssl \
     && cd .. && mv openssl-${OPENSSL_VERSION}  openssl
 
-RUN git clone https://github.com/electroneum/electroneum.git \
-    && cd electroneum \
+RUN git clone https://github.com/laxmicoin/laxmicoin.git \
+    && cd laxmicoin \
     && mkdir -p build/release \
     && cd build/release \
     && CC=clang CXX=clang++ \

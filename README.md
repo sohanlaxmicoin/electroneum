@@ -1,33 +1,32 @@
-# Electroneum
+# Laxmicoin
 
-Copyright (c) 2017, The Electroneum Project  
+Copyright (c) 2017, The Laxmicoin Project  
 Copyright (c) 2014-2017, The Monero Project  
 Portions Copyright (c) 2012-2013, The Cryptonote developers  
 
 ## Development Resources
 
-- Web: [electroneum.com](https://electroneum.com)
-- Forum: [electroneumtalk.proboards.com](https://electroneumtalk.proboards.com)
-- Mail: [support@electroneum.com](mailto:support@electroneum.com)
-- GitHub: [https://github.com/electroneum/electroneum](https://github.com/electroneum/electroneum)
+- Web: [laxmicoin.com](https://laxmicoin.com)
+- Mail: [info@laxmicoin.com](mailto:info@laxmicoin.com)
+- GitHub: [https://github.com/sohanlaxmicoin/laxmi](https://github.com/sohanlaxmicoin/laxmi)
 
 ## Introduction
 
-Electroneum is a private, secure, untraceable, mobile based cryptocurrency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
+Laxmicoin is a private, secure, untraceable, mobile based cryptocurrency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
 
-**Privacy:** Electroneum uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
+**Privacy:** Laxmicoin uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
 
 **Security:** Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured. Individual wallets have a 25 word mnemonic seed that is only displayed once, and can be written down to backup the wallet. Wallet files are encrypted with a passphrase to ensure they are useless if stolen.
 
-**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Electroneum is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
+**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Laxmicoin is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
 
 ## About this Project
 
-This is the core implementation of Electroneum. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Electroneum that uses the protocol and network in a compatible manner.
+This is the core implementation of Laxmicoin. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Laxmicoin that uses the protocol and network in a compatible manner.
 
 As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
 
-**Anyone is welcome to contribute to Electroneum's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
+**Anyone is welcome to contribute to Laxmicoin's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
 
 ## License
 
@@ -41,33 +40,33 @@ If you want to help out, see [CONTRIBUTING](CONTRIBUTING.md) for a set of guidel
 
 See [Vulnerability Response Process](VULNERABILITY_RESPONSE_PROCESS.md).
 
-## Installing Electroneum from a Package
+## Installing Laxmicoin from a Package
 
 Packages are available for
 
 * Ubuntu and [snap supported](https://snapcraft.io/docs/core/install) systems, via a community contributed build.
 
-    snap install electroneum --beta
+    snap install laxmicoin --beta
 
 Installing a snap is very quick. Snaps are secure. They are isolated with all of their dependencies. Snaps also auto update when a new version is released.
 
 * Arch Linux (via [AUR](https://aur.archlinux.org/)):
-  - Stable release: [`electroneum`](https://aur.archlinux.org/packages/electroneum)
-  - Bleeding edge: [`electroneum-git`](https://aur.archlinux.org/packages/electroneum-git)
+  - Stable release: [`laxmicoin`](https://aur.archlinux.org/packages/laxmicoin)
+  - Bleeding edge: [`laxmicoin-git`](https://aur.archlinux.org/packages/laxmicoin-git)
 
 * Docker
 
-        docker build -t electroneum .
+        docker build -t laxmicoin .
      
         # either run in foreground
-        docker run -it -v /electroneum/chain:/root/.electroneum -v /electroneum/wallet:/wallet -p 26967:26967 electroneum
+        docker run -it -v /laxmicoin/chain:/root/.laxmicoin -v /laxmicoin/wallet:/wallet -p 17221:17221 laxmicoin
 
         # or in background
-        docker run -it -d -v /electroneum/chain:/root/.electroneum -v /electroneum/wallet:/wallet -p 26967:26967 electroneum
+        docker run -it -d -v /laxmicoin/chain:/root/.laxmicoin -v /laxmicoin/wallet:/wallet -p 17221:17221 laxmicoin
 
 Packaging for your favorite distribution would be a welcome contribution!
 
-## Compiling Electroneum from Source
+## Compiling Laxmicoin from Source
 
 ### Dependencies
 
@@ -102,7 +101,7 @@ build the library binary manually. This can be done with the following command `
 
 ### Build instructions
 
-Electroneum uses the CMake build system and a top-level [Makefile](Makefile) that
+Laxmicoin uses the CMake build system and a top-level [Makefile](Makefile) that
 invokes cmake commands as needed.
 
 #### On Linux and OS X
@@ -110,7 +109,7 @@ invokes cmake commands as needed.
 * Install the dependencies
 * Change to the root of the source code directory and build:
 
-        cd electroneum
+        cd laxmicoin
         make
 
     *Optional*: If your machine has several cores and enough memory, enable
@@ -120,9 +119,9 @@ invokes cmake commands as needed.
 
 * The resulting executables can be found in `build/release/bin`
 
-* Add `PATH="$PATH:$HOME/electroneum/build/release/bin"` to `.profile`
+* Add `PATH="$PATH:$HOME/laxmicoin/build/release/bin"` to `.profile`
 
-* Run electroneum with `electroneumd --detach`
+* Run laxmicoin with `laxmicoin --detach`
 
 * **Optional**: build and run the test suite to verify the binaries:
 
@@ -203,15 +202,15 @@ By default, in either dynamically or statically linked builds, binaries target t
 * ```make release-static-win64``` builds binaries on 64-bit Windows portable across 64-bit Windows systems
 * ```make release-static-win32``` builds binaries on 64-bit or 32-bit Windows portable across 32-bit Windows systems
 
-## Running electroneumd
+## Running laxmicoind
 
 The build places the binary in `bin/` sub-directory within the build directory
 from which cmake was invoked (repository root by default). To run in
 foreground:
 
-    ./bin/electroneumd
+    ./bin/laxmicoind
 
-To list all available options, run `./bin/electroneumd --help`.  Options can be
+To list all available options, run `./bin/laxmicoind --help`.  Options can be
 specified either on the command line or in a configuration file passed by the
 `--config-file` argument.  To specify an option in the configuration file, add
 a line with the syntax `argumentname=value`, where `argumentname` is the name
@@ -219,14 +218,14 @@ of the argument without the leading dashes, for example `log-level=1`.
 
 To run in background:
 
-    ./bin/electroneumd --log-file electroneumd.log --detach
+    ./bin/laxmicoind --log-file laxmicoind.log --detach
 
 To run as a systemd service, copy
-[electroneumd.service](utils/systemd/electroneumd.service) to `/etc/systemd/system/` and
-[electroneumd.conf](utils/conf/electroneumd.conf) to `/etc/`. The [example
-service](utils/systemd/electroneumd.service) assumes that the user `electroneum` exists
+[laxmicoind.service](utils/systemd/laxmicoind.service) to `/etc/systemd/system/` and
+[laxmicoind.conf](utils/conf/laxmicoind.conf) to `/etc/`. The [example
+service](utils/systemd/laxmicoind.service) assumes that the user `laxmicoin` exists
 and its home is the data directory specified in the [example
-config](utils/conf/electroneumd.conf).
+config](utils/conf/laxmicoind.conf).
 
 If you're on Mac, you may need to add the `--max-concurrency 1` option to
-electroneum-wallet-cli, and possibly electroneumd, if you get crashes refreshing.
+laxmicoin-wallet-cli, and possibly laxmicoind, if you get crashes refreshing.
