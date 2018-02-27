@@ -265,7 +265,7 @@ namespace cryptonote
 
     // "Shuffle" outs
     std::vector<tx_destination_entry> shuffled_dsts(destinations);
-    std::random_shuffle(shuffled_dsts.begin(), shuffled_dsts.end(), [](unsigned int i) { return crypto::rand<unsigned int>() % i; });
+    std::sort(shuffled_dsts.begin(), shuffled_dsts.end(), [](const tx_destination_entry& de1, const tx_destination_entry& de2) { return de1.amount < de2.amount; } );
 
     uint64_t summary_outs_money = 0;
     //fill outputs
@@ -371,7 +371,7 @@ namespace cryptonote
         // enforce same mixin for all outputs
         for (size_t i = 1; i < sources.size(); ++i) {
           if (n_total_outs != sources[i].outputs.size()) {
-            LOG_ERROR("Non-simple ringct transaction has varying ring size");
+            LOG_ERROR("Non-simple ringct transaction has varying mixin");
             return false;
           }
         }
@@ -459,6 +459,24 @@ namespace cryptonote
     return true;
   }
   //---------------------------------------------------------------
+  void generate_genesis_tx(transaction& tx) {
+    account_public_address ac = boost::value_initialized<account_public_address>();
+    std::vector<size_t> sz;
+    construct_miner_tx(0, 0, 0, 0, 0, ac, tx); // zero fee in genesis
+    blobdata txb = tx_to_blob(tx);
+  }
+
+  std::string get_genesis_tx_hex() {
+    transaction tx;
+
+    generate_genesis_tx(tx);
+    blobdata txb = tx_to_blob(tx);
+    std::string hex_tx_represent = string_tools::buff_to_hex_nodelimer(txb);
+
+    return hex_tx_represent;
+  }
+
+  //---------------------------------------------------------------
   bool construct_tx(const account_keys& sender_account_keys, const std::vector<tx_source_entry>& sources, const std::vector<tx_destination_entry>& destinations, std::vector<uint8_t> extra, transaction& tx, uint64_t unlock_time)
   {
      crypto::secret_key tx_key;
@@ -475,11 +493,11 @@ namespace cryptonote
     bl = boost::value_initialized<block>();
 
 
-    account_public_address ac = boost::value_initialized<account_public_address>();
-    std::vector<size_t> sz;
-    construct_miner_tx(0, 0, 0, 0, 0, ac, bl.miner_tx); // zero fee in genesis
-    blobdata txb = tx_to_blob(bl.miner_tx);
-    std::string hex_tx_represent = string_tools::buff_to_hex_nodelimer(txb);
+    // account_public_address ac = boost::value_initialized<account_public_address>();
+    // std::vector<size_t> sz;
+    // construct_miner_tx(0, 0, 0, 0, 0, ac, bl.miner_tx); // zero fee in genesis
+    // blobdata txb = tx_to_blob(bl.miner_tx);
+    // std::string hex_tx_represent = string_tools::buff_to_hex_nodelimer(txb);
 
     std::string genesis_coinbase_tx_hex = config::GENESIS_TX;
 

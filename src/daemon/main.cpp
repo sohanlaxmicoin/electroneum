@@ -55,6 +55,17 @@
 namespace po = boost::program_options;
 namespace bf = boost::filesystem;
 
+
+// genesis for a new blockchain
+void print_genesis_tx_hex() {
+  std::string tx_hex = cryptonote::get_genesis_tx_hex();
+
+  std::cout << "Insert this line into your coin configuration file as is: " << std::endl;
+  std::cout << "GENESIS_TX  \"" << tx_hex  << "\"" << std::endl;
+
+  return;
+}
+
 int main(int argc, char const * argv[])
 {
   try {
@@ -83,6 +94,8 @@ int main(int argc, char const * argv[])
       bf::path default_conf = default_data_dir / std::string(CRYPTONOTE_NAME ".conf");
       command_line::add_arg(visible_options, daemon_args::arg_config_file, default_conf.string());
       command_line::add_arg(visible_options, command_line::arg_test_dbg_lock_sleep);
+      //adding command print genesis tx
+      command_line::add_arg(visible_options, daemon_args::arg_print_genesis_tx);
 
       // Settings
       bf::path default_log = default_data_dir / std::string(CRYPTONOTE_NAME ".log");
@@ -131,6 +144,12 @@ int main(int argc, char const * argv[])
     {
       std::cout << "Monero '" << MONERO_RELEASE_NAME << "' (v" << MONERO_VERSION_FULL << ")" << ENDL;
       return 0;
+    }
+
+    // Print genesis tx to make a new blockchain
+    if (command_line::get_arg(vm, daemon_args::arg_print_genesis_tx)) {
+      print_genesis_tx_hex();
+      return false;
     }
 
     // OS
